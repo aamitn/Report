@@ -25,7 +25,7 @@ Engine should be up at `http://localhost:8080`
 
 ### How to interact with the engine using API
 
-- Sample Template ([Download](blob:https://github.com/bf7337b8-6a21-431f-9093-ddae170b7a63))
+- Sample Template ([Download](https://raw.githubusercontent.com/aamitn/Report/refs/heads/master/sample_template/template.docx))
 - **Upload a template (Only .docx templates supported)**
 
  ```sh
