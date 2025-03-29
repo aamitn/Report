@@ -1,25 +1,27 @@
-package org.bitmutex;
+package com.bitmutex.libtest;
 
-import java.awt.*;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
 import com.deepoove.poi.XWPFTemplate;
 import com.deepoove.poi.data.*;
 
-import static javax.swing.UIManager.put;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.FileOutputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class NewDocGen {
 
     public static void main(String[] args) throws Exception {
 
-        //String imagePath = "E:\\ReportRepository\\Images\\myImage.png"; (For Windows Use)
-        String imagePath = "/mnt/sda1/ReportRepository/Images/myImage.png";
+        String templatePath =  "E:\\ReportRepository\\Templates\\template.docx"; // (For Windows Use)
+       // String templatePath =  "/mnt/sda1/ReportRepository/Templates/template.docx" ; // (For Unix Use)
+
+        String outputPath =  "E:\\ReportRepository\\Reports\\output.docx"; // (For Windows Use)
+      // String outputPath =  "E:\\ReportRepository\\Reports\\output.docx";  // (For Unix Use)
+
+        String imagePath = "E:\\ReportRepository\\Images\\myImage.png"; // (For Windows Use)
+        //String imagePath = "/mnt/sda1/ReportRepository/Images/myImage.png"; // (For Unix Use)
+
         String imageUrlPath = "https://files.worldwildlife.org/wwfcmsprod/images/African_elephant_YE2021_Karine_Aigner_5kzx389mvt/magazine_small/1s803ne5x2_elephantv2.jpg";
 
         // Define the map for data
@@ -53,13 +55,10 @@ public class NewDocGen {
         data.put("myTable", Tables.create(row0, row1));
 
         // Compile and render the template
-        //XWPFTemplate template = XWPFTemplate.compile("E:\\ReportRepository\\Templates\\template.docx").render(data);
-        XWPFTemplate template = XWPFTemplate.compile("/mnt/sda1/ReportRepository/Templates/template.docx").render(data);
-
+        XWPFTemplate template = XWPFTemplate.compile(templatePath).render(data);
 
         // Write and close the output
-        //template.writeAndClose(new FileOutputStream("E:\\ReportRepository\\Reports\\output.docx"));
-        template.writeAndClose(new FileOutputStream("/mnt/sda1/ReportRepository/Reports/output.docx"));
+        template.writeAndClose(new FileOutputStream(outputPath));
     }
 
 
