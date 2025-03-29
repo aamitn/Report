@@ -7,7 +7,7 @@ This is a `template based report generation engine` built on `Java` using `poi-t
  - Download Project
 
  ```sh
-git clone github.com/aamitn/report
+git clone https://github.com/aamitn/Report.git
 cd report
 ```
 - Get the Dependencies
@@ -25,7 +25,7 @@ Engine should be up at `http://localhost:8080`
 
 ### How to interact with the engine using API
 
-- Sample Template ([Download](https://www.github.com))
+- Sample Template ([Download](blob:https://github.com/bf7337b8-6a21-431f-9093-ddae170b7a63))
 - **Upload a template (Only .docx templates supported)**
 
  ```sh
